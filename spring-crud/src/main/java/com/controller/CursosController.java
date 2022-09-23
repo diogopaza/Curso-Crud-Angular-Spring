@@ -1,16 +1,17 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/teste")
-public class Hello {
-
+@RequestMapping("/api/cursos")
+public class CursosController {
+    
     @GetMapping
-    public @ResponseBody String teste(){
-        return "Diogo Paza";
-    }    
+    public List<Object> list(){
+        return null;
+    }
 }
