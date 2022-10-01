@@ -1,6 +1,5 @@
-package com.controller;
+package com.courses.model;
 
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,20 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name="cursos")
+@Table(name = "cursos")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonProperty("_id")
     private Long id;
-    @Column(name="nome", length = 200, nullable = false)
+    @Column(name = "nome", length = 200, nullable = false)
     private String name;
-    @Column(name="categoria", length = 20, nullable = false)
+    @Column(name = "categoria", length = 20, nullable = false)
     private String category;
-
 }

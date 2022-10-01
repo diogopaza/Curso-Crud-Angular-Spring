@@ -9,7 +9,7 @@ import { Course } from './../model/course';
   providedIn: 'root'
 })
 export class CoursesService {
-  private readonly API = '/assets/courses.json';
+  private readonly API = 'api/cursos';
 
    //chamada Ajax - assíncrona com o servidor
   constructor(private httpClient: HttpClient) {
@@ -23,5 +23,9 @@ export class CoursesService {
      // delay(5000),
       tap(courses => console.log(courses))
     );
+  }
+
+  save(course: Partial<Course>){
+   return this.httpClient.post<Course>(this.API,course).pipe(first());
   }
 }
